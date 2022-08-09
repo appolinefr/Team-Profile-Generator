@@ -1,4 +1,5 @@
-// function generating the content of readme file
+// I need functions to render content if engineer or intern is chooser
+
 function generateHtml(data) {
   return ``;
 }

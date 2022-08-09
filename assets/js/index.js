@@ -6,54 +6,29 @@ const path = require("path");
 const questions = [
   {
     type: "input",
-    message: "What is the title of your project?",
-    name: "title",
+    message: "What is name of the team's manager?",
+    name: "managerName",
   },
   {
     type: "input",
-    message: "Write a description of your project",
-    name: "description",
+    message: "What is the epmloyee ID of the manager?",
+    name: "managerId",
   },
   {
     type: "input",
-    message: "Input your installation instructions",
-    name: "instructions",
+    message: "What is the email address of the manager?",
+    name: "managerEmail",
   },
   {
     type: "input",
-    message: "What will the project be used for?",
-    name: "usage",
-  },
-  {
-    type: "input",
-    message: "Input your contribution guidelines",
-    name: "contribution",
-  },
-  {
-    type: "input",
-    message: "Input your test instructions",
-    name: "test",
-  },
-  {
-    type: "input",
-    message: "What is your Github username?",
-    name: "github",
-  },
-  {
-    type: "input",
-    message: "What is your email address?",
-    name: "email",
+    message: "What is the office number of the manager?",
+    name: "managerNumber",
   },
   {
     type: "list",
-    message: "Which licence would you like to add?",
-    name: "license",
-    choices: [
-      "Apache License v2.0",
-      "GNU General Public License v3.0",
-      "MIT License",
-      "None of the above",
-    ],
+    message: "Please add a new employee",
+    name: "adding",
+    choices: ["Engineer", "Intern", "I am finished building my team"],
   },
 ];
 
