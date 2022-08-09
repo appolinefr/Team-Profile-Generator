@@ -1,4 +1,4 @@
-const generateHtml = require("./generateHtml");
+const generateHtml = require("../generateHtml");
 const fs = require("fs");
 const inquirer = require("inquirer");
 const path = require("path");
