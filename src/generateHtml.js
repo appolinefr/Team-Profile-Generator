@@ -1,36 +1,3 @@
-//this will create the html page
-generateMainHtml = (teamMembers) => {
-  return `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Team Profile</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <header class="jumbotron bg-danger text-light mb-5">
-      <div class="container text-center">
-        <!-- Use align-items utilities on flexbox containers to align to start, end, center, baseline, or stretch -->
-        <h1 class="p-5">My Team</h1>
-      </div>
-    </header>
-    <main class="container">
-      <section class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-lg-3 m-4">
-        ${generateManager(manager)}
-        </div>
-      </section>
-    </main>
-  </body>
-</html>`;
-};
-
 //this will create the manager part
 generateManager = (manager) => {
   `<div class="card">
@@ -109,4 +76,50 @@ generateIntern = (intern) => {
   </div>;`;
 };
 
-module.exports = generateMainHtml;
+generateEmployees = (teamMembers) => {
+  let finalHtml = "";
+
+  for (i = 0; i < teamMembers.length; i++) {
+    if (teamMembers[i].getRole() === "Manager") {
+      finalHtml = finalHtml + generateManager(teamMembers[i]);
+    }
+    if (teamMembers[i].getRole() === "Engineer") {
+      finalHtml = finalHtml + generateEngineer(teamMembers[i]);
+    }
+    if (teamMembers[i].getRole() === "Intern") {
+      finalHtml = finalHtml + generateIntern(teamMembers[i]);
+    }
+  }
+  return finalHtml;
+};
+//this will create the html page
+module.exports = generateHtml = (data) => {
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Team Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="jumbotron bg-danger text-light mb-5">
+      <div class="container text-center">
+        <h1 class="p-5">My Team</h1>
+      </div>
+    </header>
+    <main class="container">
+      <section class="row justify-content-center">
+        <div class="col-12 col-sm-6 col-lg-3 m-4">
+        ${generateEmployees(data)}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>`;
+};
