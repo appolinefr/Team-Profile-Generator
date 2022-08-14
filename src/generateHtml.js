@@ -1,28 +1,6 @@
-generateEmployees = (teamMembers) => {
-
-   let finalHtml = [];
-
-   finalHtml.push(
-     teamMembers
-       .filter((employee) => employee.getRole() === "Manager")
-       .map((manager) => generateManager(manager))
-   );
-   finalHtml.push(
-     teamMembers
-       .filter((employee) => employee.getRole() === "Engineer")
-       .map((engineer) => generateEngineer(engineer))
-       .join("")
-   );
-   finalHtml.push(
-     teamMembers
-       .filter((employee) => employee.getRole() === "Intern")
-       .map((intern) => generateIntern(intern))
-       .join("")
-   );
-
-  //this will create the manager part
-  generateManager = (manager) => {
-    `<div class="card">
+//this will create the manager part
+generateManager = (manager) => {
+  `<div class="card">
    <h3 class="card-header bg-info">${manager.getRole()}</h3>
     <h3 class="card-header bg-info">${manager.getName()}</h3>
     <div class="card-body">
@@ -44,11 +22,11 @@ generateEmployees = (teamMembers) => {
       </table>
     </div>
   </div>;`;
-  };
+};
 
-  //this will create the engineer part
-  generateEngineer = (engineer) => {
-    `<div class="card">
+//this will create the engineer part
+generateEngineer = (engineer) => {
+  `<div class="card">
    <h3 class="card-header bg-info">${engineer.getRole()}</h3>
     <h3 class="card-header bg-info">${engineer.getName()}</h3>
     <div class="card-body">
@@ -70,11 +48,11 @@ generateEmployees = (teamMembers) => {
       </table>
     </div>
   </div>;`;
-  };
+};
 
-  //this will create the intern part
-  generateIntern = (intern) => {
-    `<div class="card">
+//this will create the intern part
+generateIntern = (intern) => {
+  `<div class="card">
    <h3 class="card-header bg-info">${intern.getRole()}</h3>
     <h3 class="card-header bg-info">${intern.getName()}</h3>
     <div class="card-body">
@@ -96,9 +74,24 @@ generateEmployees = (teamMembers) => {
       </table>
     </div>
   </div>;`;
-  };
+};
 
-  return finalHtml.join("");
+// this will generate a card for each employee in the array
+generateEmployees = (teamMembers) => {
+  let finalHtml = "";
+
+  for (i = 0; i < teamMembers.length; i++) {
+    if (teamMembers[i].getRole() === "Manager") {
+      finalHtml = finalHtml + generateManager(teamMembers[i]);
+    }
+    if (teamMembers[i].getRole() === "Engineer") {
+      finalHtml = finalHtml + generateEngineer(teamMembers[i]);
+    }
+    if (teamMembers[i].getRole() === "Intern") {
+      finalHtml = finalHtml + generateIntern(teamMembers[i]);
+    }
+  }
+  return finalHtml;
 };
 
 //this will create the html page
