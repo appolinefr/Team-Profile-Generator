@@ -133,7 +133,7 @@ addEngineer = () => {
       {
         type: "input",
         message: "Enter their github username",
-        name: "github",
+        name: "gitHub",
       },
     ])
     .then((response) => {

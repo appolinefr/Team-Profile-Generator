@@ -25,16 +25,18 @@ This project was to build a Node.js command-line application that takes in infor
 
 ## What I have learned
 
+
+
 ## Challenges
 
 ### Screenshot of the command-line application
 
-<!-- ![Screenshot of deployed page](assets/images/application.png) -->
+![Screenshot of CLI](/images/CLI-image.png)
 
 ### Walkthrough video
 
-<!-- [Link to Walkthrough video](https://drive.google.com/file/d/1HnGZQ_iE52Nra2UF0LqRvexW4CdSGn84/view) -->
+[Link to Walkthrough video](https://drive.google.com/file/d/1_NFxouZj6JXgHpc9dd5Sq6DTYtCuC0P0/view)
 
 ### Generated HTML File
 
-<!-- [Link to generated README File](https://github.com/appolinefr/team-profile-generator/tree/main/dist) -->
+[Link to generated README File](https://github.com/appolinefr/team-profile-generator/tree/main/dist/teamProfile.html)

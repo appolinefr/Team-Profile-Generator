@@ -1,79 +1,57 @@
 //this will create the manager part
 generateManager = (manager) => {
-  `<div class="card">
-   <h3 class="card-header bg-info">${manager.getRole()}</h3>
-    <h3 class="card-header bg-info">${manager.getName()}</h3>
-    <div class="card-body">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <th scope="row">ID: ${manager.getId()}</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">Email: ${manager.getEmail()}</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">Office number: ${manager.getOfficeNumber()}</th>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>;`;
+  return `<div class="col-4 col-sm-6 col-lg-3 m-4">
+        <div class="card">
+          <div class="card-header bg-info text-white text-center"> 
+          <h2> ${manager.getName()}</h2>
+          <h3> 🤓 ${manager.getRole()}</h3>
+          </div>
+          <div class="card-body bg-light">
+            <ul class="list-unstyled">
+              <li class='border p-2 mt-2 bg-white'>ID: ${manager.getId()}</li>
+              <li class='border p-2 bg-white'>Email: <a href="mailto:${manager.getEmail()}" target="_blank">${manager.getEmail()}</a></li>
+              <li class='border p-2 bg-white'>Office number: ${manager.getOfficeNumber()}</li>
+            </ul>
+          </div>
+        </div>
+      </div>`;
 };
 
 //this will create the engineer part
 generateEngineer = (engineer) => {
-  `<div class="card">
-   <h3 class="card-header bg-info">${engineer.getRole()}</h3>
-    <h3 class="card-header bg-info">${engineer.getName()}</h3>
-    <div class="card-body">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <th scope="row">ID: ${engineer.getId()}</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">Email: ${engineer.getEmail()}</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">GitHub username: ${engineer.getGithub()}</th>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>;`;
+  return `<div class="col-4 col-sm-6 col-lg-3 m-4">
+        <div class="card">
+          <div class="card-header bg-info text-white text-center"> 
+          <h2> ${engineer.getName()}</h2>
+          <h3> ✏️ ${engineer.getRole()}</h3>
+          </div>
+          <div class="card-body bg-light">
+            <ul class="list-unstyled">
+              <li class='border p-2 mt-2 bg-white'>ID: ${engineer.getId()}</li>
+              <li class='border p-2 bg-white'>Email: <a href="mailto:${engineer.getEmail()}" target="_blank">${engineer.getEmail()}</a></li>
+              <li class='border p-2 bg-white'>Github username: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>`;
 };
 
 //this will create the intern part
 generateIntern = (intern) => {
-  `<div class="card">
-   <h3 class="card-header bg-info">${intern.getRole()}</h3>
-    <h3 class="card-header bg-info">${intern.getName()}</h3>
-    <div class="card-body">
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <th scope="row">ID: ${intern.getId()}</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">Email: ${intern.getEmail()}</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">GitHub username: ${intern.getSchool()}</th>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>;`;
+  return `<div class="col-4 col-sm-6 col-lg-3 m-4">
+        <div class="card">
+          <div class="card-header bg-info text-white text-center "> 
+          <h2> ${intern.getName()}</h2>
+          <h3> 🎓 ${intern.getRole()}</h3>
+          </div>
+          <div class="card-body bg-light">
+            <ul class="list-unstyled">
+              <li class='border p-2 mt-2 bg-white'>ID: ${intern.getId()}</li>
+              <li class='border p-2 bg-white'>Email <a href="mailto:${intern.getEmail()}" target="_blank">${intern.getEmail()}</a></li>
+              <li class='border p-2 bg-white'>School: ${intern.getSchool()}</li>
+            </ul>
+          </div>
+        </div>`;
 };
 
 // this will generate a card for each employee in the array
@@ -81,6 +59,7 @@ generateEmployees = (teamMembers) => {
   let finalHtml = "";
 
   for (i = 0; i < teamMembers.length; i++) {
+    console.log(teamMembers[i].getRole());
     if (teamMembers[i].getRole() === "Manager") {
       finalHtml = finalHtml + generateManager(teamMembers[i]);
     }
@@ -117,7 +96,6 @@ generateHtml = (teamMembers) => {
     </header>
     <main class="container">
       <section class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-lg-3 m-4">
         ${generateEmployees(teamMembers)}
         </div>
       </section>
