@@ -25,9 +25,11 @@ This project was to build a Node.js command-line application that takes in infor
 
 ## What I have learned
 
-
+I learned a lot during this project and I enjoyed being able to practise every concept learned from Object Oriented Programming. There were quite a lot of steps involved in doing this project and I feel now more confident modularising my code.
 
 ## Challenges
+
+I initially thought that working with classes would be a challenge as this concept was a little daunting in class. I managed to successfully create them and writing the tests for each class was the trickier part for this challenge. Writing tests for a project for the first time took a lot of practises and some failed tests. With persistence and going back to some of the content from the classes I was successfull in creating and passing every test.
 
 ### Screenshot of the command-line application
 
