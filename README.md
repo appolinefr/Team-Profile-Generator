@@ -37,7 +37,7 @@ I initially thought that working with classes would be a challenge as this conce
 
 ### Walkthrough video
 
-[Link to Walkthrough video](https://drive.google.com/file/d/1_NFxouZj6JXgHpc9dd5Sq6DTYtCuC0P0/view)
+[Link to Walkthrough video](https://drive.google.com/file/d/1i5DfYTOcEXYr0j3d9UPRF2en93h6UdZ9/view)
 
 ### Generated HTML File
 
