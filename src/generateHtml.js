@@ -14,7 +14,8 @@ generateManager = (manager) => {
             </ul>
           </div>
         </div>
-      </div>`;
+      </div>
+      `;
 };
 
 //this will create the engineer part
@@ -33,7 +34,8 @@ generateEngineer = (engineer) => {
             </ul>
           </div>
         </div>
-      </div>`;
+      </div>
+      `;
 };
 
 //this will create the intern part
@@ -51,7 +53,9 @@ generateIntern = (intern) => {
               <li class='border p-2 bg-white'>School: ${intern.getSchool()}</li>
             </ul>
           </div>
-        </div>`;
+        </div>
+         </div>
+         `;
 };
 
 // this will generate a card for each employee in the array
